@@ -7,14 +7,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class View extends Activity {
-    private Presenter myPresenter;
+    private Mediator mediator;
     private TextView display;
     private Button buttonPlus;
     private Button buttonMinus;
 
-    public void setDisplay(String text) {
-        display.setText(text);
-    }
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +24,8 @@ public class View extends Activity {
         buttonMinus = (Button) findViewById(R.id.button2);
         display = (TextView) findViewById(R.id.display);
 
-        //  Inicializo el presentador
-        myPresenter=new Presenter(this);
+        
+        mediator=new Mediator(this);
 
         //  Registro los listeners de mis botones
         buttonPlus.setOnClickListener(new android.view.View.OnClickListener() {
