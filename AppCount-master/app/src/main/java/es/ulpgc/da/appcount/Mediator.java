@@ -1,7 +1,7 @@
 public class Mediator{
 
  private Integer counter;
-
+    private TextView display;
     public Mediator() {
         counter=0;
        View view = new View();
@@ -20,7 +20,7 @@ public class Mediator{
     }
 
 public void setDisplay(String text) {
-        view.display.setText(text);
+        display.setText(text);
     }
 
 
