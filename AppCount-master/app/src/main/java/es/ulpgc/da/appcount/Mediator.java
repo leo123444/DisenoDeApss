@@ -4,6 +4,7 @@ public class Mediator{
 
     public Mediator() {
         counter=0;
+       View view = new View();
     }
 
     public Integer getCounter() {
@@ -17,5 +18,10 @@ public class Mediator{
     public void decrement() {
         this.counter--;
     }
+
+public void setDisplay(String text) {
+        view.display.setText(text);
+    }
+
 
 }
