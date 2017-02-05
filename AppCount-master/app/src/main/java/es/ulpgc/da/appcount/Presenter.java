@@ -11,12 +11,12 @@ public class Presenter {
 
     public void buttonPlusPressed() {
         mediator.increment();
-        myView.setDisplay (myModel.getCounter().toString());
+        mediator.setDisplay (mediator.getCounter().toString());
     }
 
     public void buttonMinusPressed() {
         mediator.decrement();
-        myView.setDisplay (myModel.getCounter().toString());
+        mediator.setDisplay (mediator.getCounter().toString());
     }
 
 }
