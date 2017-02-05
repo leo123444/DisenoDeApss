@@ -1,6 +1,6 @@
 
  
-
+import android.widget.TextView;
 public class Mediator{
 
  private Integer counter;
