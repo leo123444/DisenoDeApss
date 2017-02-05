@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class View extends Activity {
     private Mediator mediator;
-    private TextView display;
+   
     private Button buttonPlus;
     private Button buttonMinus;
 
@@ -31,14 +31,14 @@ public class View extends Activity {
         buttonPlus.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View view) {
-                myPresenter.buttonPlusPressed();
+                mediator.buttonPlusPressed();
             }
         });
 
         buttonMinus.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View view) {
-                myPresenter.buttonMinusPressed();
+                mediator.buttonMinusPressed();
             }
         });
 
