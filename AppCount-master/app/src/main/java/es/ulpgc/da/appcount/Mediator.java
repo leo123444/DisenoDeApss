@@ -7,7 +7,7 @@ public class Mediator{
     private TextView display;
     public Mediator() {
         counter=0;
-       View view = new View();
+
     }
 
     public Integer getCounter() {
