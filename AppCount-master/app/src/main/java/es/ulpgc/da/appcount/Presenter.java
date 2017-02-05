@@ -1,21 +1,21 @@
 package es.ulpgc.da.appcount;
 
 public class Presenter {
-    Model myModel;
-    View myView;
+    Mediator mediator;
+  
 
-    public Presenter(View view) {
-        myModel = new Model();
-        myView = view;
+    public Presenter() {
+        mediator = new Mediator();
+        
     }
 
     public void buttonPlusPressed() {
-        myModel.increment();
+        mediator.increment();
         myView.setDisplay (myModel.getCounter().toString());
     }
 
     public void buttonMinusPressed() {
-        myModel.decrement();
+        mediator.decrement();
         myView.setDisplay (myModel.getCounter().toString());
     }
 
