@@ -115,7 +115,27 @@ public class Vista extends AppCompatActivity {
         setConfirm(pr.getConfirmLabel());
     }
 
+  String getConfirmLabel() {
+        return confirmLabel;
+    }
 
+
+String getTrueLabel() {
+        return trueLabel;
+    }
+    public String getCheatLabel() {
+        return cheatLabel;
+    }
+
+public String getFalseLabel() {
+        return falseLabel;
+    }
+
+    public String getNextLabel() {
+        return nextLabel;
+    }
+
+  
     void hideAnswer() {
         labelAnswer.setVisibility(View.INVISIBLE);
     }
