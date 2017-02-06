@@ -60,14 +60,6 @@ boolean confirmBtnClicked;
 
 
 
-    String getConfirmLabel() {
-        return vista.confirmLabel;
-    }
-
-
-
-
-
     private String getAnswer() {
         if(modelo.trueAnswer) {
             return vista.trueLabel;
@@ -76,12 +68,7 @@ boolean confirmBtnClicked;
         }
     }
 
-    String getTrueLabel() {
-        return vista.trueLabel;
-    }
-    public String getCheatLabel() {
-        return vista.cheatLabel;
-    }
+    
 
 
 
@@ -89,14 +76,7 @@ boolean confirmBtnClicked;
         return vista.quizQuestions[modelo.quizIndex];
     }
 
-    public String getFalseLabel() {
-        return vista.falseLabel;
-    }
-
-    public String getNextLabel() {
-        return vista.nextLabel;
-    }
-
+    
     public String getNextQuestion() {
         modelo.quizIndex++;
         return getCurrentQuestion();
