@@ -3,31 +3,27 @@ package es.ulpgc.eite.android.quiz;
 import android.support.v7.app.AppCompatActivity;
 
 public class Presentador extends AppCompatActivity{
-   Modelo modelo;
-    Vista vista;
-  boolean answerBtnClicked;
+  Mediador mediador;
 
-boolean confirmBtnClicked;
 
- public Presentador(){
+ public Presentador(Mediador mediador){
+this.mediador=mediador;
 
-        this.modelo=new Modelo();
-        this.vista=new Vista();
 
 
 
  }
 
     public Modelo getQuestionStore() {
-        return modelo;
+        return mediador.getModelo();
     }
 
 
     public String getCurrentAnswer() {
-        if(modelo.quizAnswers[modelo.quizIndex] == modelo.userAnswers[modelo.quizIndex]) {
-            return vista.correctLabel;
+        if(mediador.getModelo().quizAnswers[mediador.getModelo().quizIndex] == mediador.getModelo().userAnswers[mediador.getModelo().quizIndex]) {
+            return mediador.getVista().correctLabel;
         } else {
-            return vista.incorrectLabel;
+            return mediador.getVista().incorrectLabel;
         }
     }
 
@@ -35,12 +31,12 @@ boolean confirmBtnClicked;
         //quizApp = (QuizApp) getApplication();
 
 
-       vista. setButtonLabels();
-       vista. checkVisibility();
+       mediador.getVista(). setButtonLabels();
+      mediador.getVista(). checkVisibility();
 
 
-        if(isAnswerBtnClicked()){
-          vista.  setAnswer(getCurrentAnswer());
+        if(mediador.isAnswerBtnClicked()){
+         mediador.getVista().  setAnswer(getCurrentAnswer());
         }
     }
     void onFalseBtnClicked() {
@@ -49,10 +45,10 @@ boolean confirmBtnClicked;
     }
 
     void onTrueBtnClicked() {
-      vista.  setAnswer(getAnswer());
-        vista.setAnswerVisibility(true);
-        confirmBtnClicked = true;
-       vista. checkAnswerVisibility();
+        mediador.getVista().  setAnswer(getAnswer());
+        mediador. getVista().setAnswerVisibility(true);
+        mediador.confirmBtnClicked = true;
+        mediador.getVista(). checkAnswerVisibility();
     }
 
 
@@ -61,10 +57,10 @@ boolean confirmBtnClicked;
 
 
     private String getAnswer() {
-        if(modelo.trueAnswer) {
-            return vista.trueLabel;
+        if(mediador.getModelo().trueAnswer) {
+            return mediador.getVista().trueLabel;
         } else {
-            return vista.falseLabel;
+            return mediador.getVista().falseLabel;
         }
     }
 
@@ -73,29 +69,19 @@ boolean confirmBtnClicked;
 
 
     public String getCurrentQuestion() {
-        return vista.quizQuestions[modelo.quizIndex];
+        return mediador.getVista().quizQuestions[mediador.getModelo().quizIndex];
     }
 
     
     public String getNextQuestion() {
-        modelo.quizIndex++;
+       mediador.getModelo().quizIndex++;
         return getCurrentQuestion();
     }
 
 
-    public boolean isAnswerBtnClicked() {
-        return answerBtnClicked;
-    }
 
-    public boolean isAnswerVisible() {
-        return vista.answerVisible;
-    }
-
-    public boolean isToolbarVisible() {
-        return vista.toolbarVisible;
-    }
     private void setAnswer(boolean answer){
-        modelo.trueAnswer = answer;
+       mediador. getModelo().trueAnswer = answer;
     }
 
 

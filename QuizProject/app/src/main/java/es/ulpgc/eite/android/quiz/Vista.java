@@ -30,8 +30,8 @@ public class Vista extends AppCompatActivity {
 
     private boolean confirmBtnClicked;
     public  boolean toolbarVisible;
-
-    public Vista() {
+    Mediador mediador;
+    public Vista(Mediador mediador) {
         falseLabel = "False";
         trueLabel = "True";
         correctLabel = "Correct!";
@@ -41,6 +41,8 @@ public class Vista extends AppCompatActivity {
         falseLabel = "False";
         trueLabel = "True";
         confirmLabel = "Are you sure?";
+         this.mediador= mediador;
+         this.pr= mediador.getPresentador();
     }
 
 
@@ -110,9 +112,9 @@ public class Vista extends AppCompatActivity {
     };
 
     public void setButtonLabels() {
-        setTrueButton(pr.getTrueLabel());
-        setFalseButton(pr.getFalseLabel());
-        setConfirm(pr.getConfirmLabel());
+        setTrueButton(getTrueLabel());
+        setFalseButton(getFalseLabel());
+        setConfirm(getConfirmLabel());
     }
 
   String getConfirmLabel() {
@@ -120,14 +122,14 @@ public class Vista extends AppCompatActivity {
     }
 
 
-String getTrueLabel() {
+    String getTrueLabel() {
         return trueLabel;
     }
     public String getCheatLabel() {
         return cheatLabel;
     }
 
-public String getFalseLabel() {
+   public String getFalseLabel() {
         return falseLabel;
     }
 
@@ -162,31 +164,19 @@ public String getFalseLabel() {
 
 
     public void setAnswerBtnClicked(boolean clicked) {
-        pr.answerBtnClicked = clicked;
+        mediador.answerBtnClicked = clicked;
     }
 
     void hideToolbar() {
        toolbarScreen. setVisibility(View.GONE);
     }
-    void checkAnswerVisibility(){
-        if(pr.isAnswerVisible()==false) {
-             hideAnswer();
-        } else {
-              showAnswer();
-        }
-    }
 
 
-    private void checkToolbarVisibility(){
-        if (!pr.isToolbarVisible()) {
-             hideToolbar();
-        }
-    }
 
-    void checkVisibility(){
-        checkToolbarVisibility();
-        checkAnswerVisibility();
-    }
+
+
+
+
 
 
 
