@@ -1,6 +1,5 @@
 package es.ulpgc.eite.android.quiz;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
 public class Modelo  extends AppCompatActivity{
@@ -49,18 +48,11 @@ public class Modelo  extends AppCompatActivity{
        this.presentador= mediador.getPresentador();
     }
 
-public void goToCheatScreen(Presentador activity){
-         mediador.cheatState = new CheatState();
-         mediador.cheatState.toolbarVisible = false;
-        mediador. cheatState.answerVisible = false;
-        mediador. cheatState.answerBtnClicked = questionState.answerBtnClicked;
 
-
-        activity.startActivity(new Intent(activity,Mediador .class));
-    }
     public void backToQuestionScreen(){
         presentador.finish();
     }
 
-   
+
+
 }

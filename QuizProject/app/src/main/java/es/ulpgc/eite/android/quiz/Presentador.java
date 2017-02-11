@@ -32,7 +32,7 @@ this.mediador=mediador;
 
 
        mediador.getVista(). setButtonLabels();
-      mediador.getVista(). checkVisibility();
+      mediador. checkVisibility();
 
 
         if(mediador.isAnswerBtnClicked()){
@@ -48,7 +48,7 @@ this.mediador=mediador;
         mediador.getVista().  setAnswer(getAnswer());
         mediador. getVista().setAnswerVisibility(true);
         mediador.confirmBtnClicked = true;
-        mediador.getVista(). checkAnswerVisibility();
+        mediador. checkAnswerVisibility();
     }
 
 
