@@ -47,6 +47,7 @@ public class Modelo  extends AppCompatActivity{
 
     public Modelo(Mediador mediador) {
        this.mediador= mediador;
+       this.presentador= mediador.getPresentador();
     }
 
 
@@ -54,35 +55,5 @@ public class Modelo  extends AppCompatActivity{
         presentador.finish();
     }
 
-    public void goToCheatScreen(Presentador activity){
-         cheatState = new CheatState();
-         cheatState.toolbarVisible = false;
-         cheatState.answerVisible = false;
-         cheatState.answerBtnClicked = questionState.answerBtnClicked;
-
-
-        activity.startActivity(new Intent(activity,Presentador .class));
-    }
-
-    private class QuestionState {
-        boolean toolbarVisible;
-        boolean answerVisible;
-        boolean answerBtnClicked;
-
-    }
-
-
-
-
-    private class CheatState {
-        boolean toolbarVisible;
-        boolean answerVisible;
-        boolean answerBtnClicked;
-    }
-
-
-
-
-
-
+   
 }
