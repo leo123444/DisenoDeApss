@@ -66,4 +66,32 @@ public Modelo getModelo(){
             vista.showAnswer();
         }
 
-}}
+}
+
+
+ 
+
+    private class QuestionState {
+        boolean toolbarVisible;
+        boolean answerVisible;
+        boolean answerBtnClicked;
+
+    }
+
+
+
+
+    private class CheatState {
+        boolean toolbarVisible;
+        boolean answerVisible;
+        boolean answerBtnClicked;
+    }
+
+
+
+
+
+
+
+
+}
