@@ -42,16 +42,23 @@ public class Modelo  extends AppCompatActivity{
             false, // 19
             true // 20
     };
-    private QuestionState questionState;
-    CheatState cheatState;
+   
 
     public Modelo(Mediador mediador) {
        this.mediador= mediador;
        this.presentador= mediador.getPresentador();
     }
 
+public void goToCheatScreen(Presentador activity){
+         mediador.cheatState = new CheatState();
+         mediador.cheatState.toolbarVisible = false;
+        mediador. cheatState.answerVisible = false;
+        mediador. cheatState.answerBtnClicked = questionState.answerBtnClicked;
 
-    public void backToQuestionScreen( Presentador presentador){
+
+        activity.startActivity(new Intent(activity,Mediador .class));
+    }
+    public void backToQuestionScreen(){
         presentador.finish();
     }
 
