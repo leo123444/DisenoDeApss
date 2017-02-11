@@ -11,6 +11,8 @@ public class Mediador {
     boolean answerBtnClicked;
 
     boolean confirmBtnClicked;
+    QuestionState questionState;
+    CheatState cheatState;
 
 public Mediador(){
     this.modelo= new Modelo(this);
